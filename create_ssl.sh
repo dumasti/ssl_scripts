@@ -17,8 +17,7 @@ while true; do
         elif [[ "$object" == "C" ]] || [[ "$object" == "c" ]]; then
                 exit
         else
-                echo "Correct answer is S/s/U/u/C/c only!
-                Correct data or other? ((S)erver/(U)ser/(C)ancel"
+                echo "Correct answer is S/s/U/u/C/c only!"
         fi
 done
 echo "Which CA to use? "

@@ -33,7 +33,7 @@ echo "How long to sign the certificate (in days)?
 1825 - 5 years "
 read -r
 year_new=$REPLY
-mkdir ~/ssl_scripts/ssl_certs/$name
+mkdir -p ~/ssl_scripts/ssl_certs/$name
 year_old=`cat ~/$ca/vars | grep "set_var EASYRSA_CERT_EXPIRE"`
 sed -i "s/$year_old/set_var EASYRSA_CERT_EXPIRE $year_new/" ~/$ca/vars
 ./easyrsa gen-req $name nopass

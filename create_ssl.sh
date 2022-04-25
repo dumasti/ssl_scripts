@@ -62,6 +62,9 @@ elif [[ "$object" == "U" ]] || [[ "$object" ==  "u" ]]; then
         cp ~/$ca/pki/private/$name.{key,p12} ~/ssl_scripts/ssl_certs/$name
 fi
 echo "$name `date | cut -d " " -f2,3,4` $ca $year_new $object  CREATE" >> ~/ssl_scripts/cert_base
+cd ~/ssl_scripts/ssl_certs/
+tar -cvf $name/$name.tar $name/*
+tar -czvf $name/$name.tar.gz $name/*
 whoami=`whoami`
 sudo chown -R $whoami:$whoami ~/ssl_scripts/ssl_certs/$name/
 echo "DONE!"
